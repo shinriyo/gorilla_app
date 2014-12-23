@@ -3,22 +3,32 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
+	"github.com/unrolled/render"
 	"net/http"
 )
 
 func main() {
-	r := mux.NewRouter()
-	r.HandleFunc("/products/{key}", ProductsHandler)
-	r.HandleFunc("/article/{category}", ArticlesCategoryHandler)
+	router := mux.NewRouter()
+	ren := render.New(render.Options{
+	// a lot of app specific setup
+	})
+
+	// テンプレートのため
+	router.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+		ren.HTML(w, http.StatusOK, "index", nil)
+	})
+
+	router.HandleFunc("/products/{key}", ProductsHandler)
+	router.HandleFunc("/article/{category}", ArticlesCategoryHandler)
 	// 正規表現にマッチしない場合は404
 	// 最後の/がないと直前のパラメータはなかったことになる
-	r.HandleFunc("/article/{category}/{id:[0-9]+}/", ArticleHandler).Methods("GET")
+	router.HandleFunc("/article/{category}/{id:[0-9]+}/", ArticleHandler).Methods("GET")
 
 	// 404のときのハンドラ
 	// このようにすれば独自に404用のハンドラを定義できるようです。
-	r.NotFoundHandler = http.HandlerFunc(NotFoundHandler)
+	router.NotFoundHandler = http.HandlerFunc(NotFoundHandler)
 
-	http.Handle("/", r)
+	http.Handle("/", router)
 
 	http.ListenAndServe(":8080", nil)
 }

@@ -76,3 +76,6 @@ src/cmd/hgpatch/hgpatch
 doc/codelab/wiki/*.bin
 /bin/
 /pkg/
+
+# IntelliJ
+.idea
