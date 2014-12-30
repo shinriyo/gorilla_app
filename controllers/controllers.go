@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+
 func ArticlesCategoryHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	for k, v := range vars {
@@ -14,6 +15,7 @@ func ArticlesCategoryHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Write([]byte("ArticlesCategoryHandler"))
 }
+
 
 func ArticleHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
@@ -25,6 +27,7 @@ func ArticleHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("ArticleHandleer"))
 }
 
+
 func ProductsHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 
@@ -34,7 +37,6 @@ func ProductsHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Write([]byte("ProductsHandler"))
 }
-
 
 
 func NotFoundHandler(w http.ResponseWriter, r *http.Request) {
