@@ -13,7 +13,21 @@ Golilla web tookitを試したよ。
 
 ## Requirement
 
+Go言語
+
 ## Usage
+
+### コントローラ系
+
+controllersに書いてね。
+
+### テンプレート系
+
+templatesに書いてね。
+
+### URL系
+
+urlsに書いてね。
 
 ```
 go get github.com/gorilla/mux
