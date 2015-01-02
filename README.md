@@ -34,13 +34,17 @@ templatesに書いてね。
 urlsに書いてね。
 
 ```
-go get github.com/gorilla/mux
+go run main.go
 ```
+
+http://localhost:8080/
+にアクセス。
 
 ## Install
 
 ```
-go run main.go
+go get github.com/gorilla/mux
+go get github.com/unrolled/render
 ```
 
 ## Contribution
