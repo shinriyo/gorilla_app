@@ -11,7 +11,7 @@ func RootFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("MyFunc() called")
 	ren := render.New(render.Options{
 		// a lot of app specific setup
-	})
+})
 
 	ren.HTML(w, http.StatusOK, "index", nil)
 }
