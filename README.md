@@ -9,7 +9,11 @@ Golilla web tookitを試したよ。
 
 ## Demo
 
+N/A
+
 ## VS. 
+
+N/A
 
 ## Requirement
 
@@ -40,6 +44,8 @@ go run main.go
 ```
 
 ## Contribution
+
+shinriyo
 
 ## Licence
 
